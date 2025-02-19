@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Karantina:wght@300;400;700&family=Karla:ital,wght@0,200..800;1,200..800&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Rowdies:wght@300;400;700&display=swap');
+
+$primary-color: #3498db;
+$button-bg: #2ecc71;
+
+body {
+  font-family: "EB Garamond", serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  color: $primary-color;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  max-width: 600px;
+  height: 100px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  background-color: $button-bg;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.paragraph {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+}
+
+.paragraph-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.addParagraph {
+  background-color: blue;
+  border-radius: 10px;
+}
+
+.saveDraft {
+  background-color: #2ecc71;
+  border-radius: 10px;
+}
+
+.clearText {
+  margin-top: 20px;
+  background-color: red;
+  border-radius: 10px;
+}
+
+.text-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.text {
+  width: 90%;
+  max-width: 800px;
+  min-height: 300px;
+  padding: 20px 30px;
+  margin: 0 auto;
+  background: linear-gradient(white 30px, #b0c4de 30px);
+  background-size: 100% 40px; // Criando as linhas azuis do caderno
+  border: 1px solid black;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  position: relative;
+  line-height: 40px;
+  display: flex;
+  flex-direction: column;
+  transition: min-height 0.3s ease-in-out;
+
+  // Ajustando a altura automaticamente conforme os parágrafos crescem
+  min-height: auto;
+  height: auto;
+
+  // Linha vermelha para margem de redação
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 2px;
+    height: 100%;
+    background-color: red;
+  }
+
+  p {
+    font-family: "Times New Roman", serif;
+    font-size: 18px;
+    color: #333;
+    word-wrap: break-word;
+    text-align: justify;
+    max-width: 700px;
+    margin-left: 60px;
+    margin-right: 10px;
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .text {
+    width: 80%;
+    max-width: 100%;
+  }
+
+  p {
+    font-size: 16px;
+    margin-left: 50px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .text {
+    padding: 15px;
+  }
+
+  p {
+    font-size: 12px;
+    margin-left: 40px;
+  }
+}
